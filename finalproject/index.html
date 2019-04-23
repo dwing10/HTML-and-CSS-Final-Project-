@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gaming</title>
+<meta charset="utf-8">
+<meta name="viewport" content="device-width, initial-scale=1.0">
+<meta name="description" content="Gaming" />
+<meta name="keywords" content="arcade, games, gaming, switch, scores, video">
+<link rel="stylesheet" href="css/index.css" media="screen" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+<link rel="stylesheet" href="css/print.css" media="print" />
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1} 
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none"; 
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block"; 
+  dots[slideIndex-1].className += " active";
+}
+</script>
+</head>
+<body>
+<section>
+    <audio autoplay id="player" src="media/newDawn.mp3"></audio>
+    <div>
+        <button onclick="document.getElementById('player').pause()">Pause</button>
+        <button onclick="document.getElementById('player').play()">Play</button>
+    </div>
+</section>
+<header><h1>Game Over</h1></header>
+<aside>
+    “The worst thing a kid can say about homework is that it is too hard.<br>
+    The worst thing a kid can say about a game is it's too easy.”<br> 
+    ― Henry Jenkins
+</aside>
+<main>
+<article>
+<section>
+<details>
+    <summary>61 Years of Gaming</summary>
+        <p>
+        In October 1958, Physicist William Higinbotham created what is thought to be the first video game. <br>
+        It was a very simple tennis game, similar to the classic 1970s video game Pong, and it was quite a <br>
+        hit at a Brookhaven National Laboratory open house.<br>
+        <cite><small>//www.aps.org/publications/apsnews/200810/physicshistory.cfm</small></cite>
+        </p>
+</details>
+</section>
+<div id="mySidenav" class="sidenav">
+    <a href="https://www.esquire.com/lifestyle/g26572573/best-video-games-ranked/" id="top10">Top 10</a>
+    <a href="https://en.wikipedia.org/wiki/History_of_video_games" id="history">History</a>
+    <a href="https://www.youtube.com/watch?v=z7-BN0qdZDk" id="documentary">Documentary</a>
+    <a href="https://www.gameinformer.com/2019/03/04/2019-video-game-release-schedule" id="informer">The Informer</a>
+</div>
+<div class="video">
+    <iframe width="300" height="200" src="https://www.youtube.com/embed/dE1DuBesGYM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<div class="slideshow-container">
+    <div class="mySlides fade" id="arcade">
+    <div class="numbertext">1 / 4</div>
+        <img src="media/arcade2.jpg" style="width:450px; height: 300px;" alt="arcade">
+    </div>
+    <div class="mySlides fade" id="games">
+    <div class="numbertext">2 / 4</div>
+        <img src="media/games.jpg" style="width:450px; height: 300px;" alt="games">
+    </div>
+    <div class="mySlides fade" id="scores">
+    <div class="numbertext">3 / 4</div>
+        <img src="media/scores.jpg" style="width:450px; height: 300px;" alt="scores">
+    </div>
+    <div class="mySlides fade" id="switch">
+    <div class="numbertext">4 / 4</div>
+        <img src="media/switch.jpg" style="width:450px; height: 300px;" alt="switch">
+    </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094</a>
+        <a class="next" onclick="plusSlides(1)">&#10095</a>
+    </div>
+    <br>
+<div class="icon-bar">
+    <a href="https://www.twitch.tv/"><i class="fab fa-twitch"></i></a>
+    <a href="https://store.steampowered.com/"><i class="fab fa-steam"></i></a>
+    <a href="https://www.playstation.com/en-us/"><i class="fab fa-playstation"></i></a>
+    <a href="https://www.xbox.com/en-US/"><i class="fab fa-xbox"></i></a>
+</div>
+<div class="cursor"></div>
+<footer>
+&copy; Devin Wing<br>
+<cite>Music sourced from www.bensound.com</cite>
+</footer>
+</article>
+</main>
+<script>
+const cursor = document.querySelector('.cursor');
+
+document.addEventListener('mousemove', e => {
+    cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX -  10)+"px;")
+})
+
+document.addEventListener('click', () => {
+    cursor.classList.add("expand");
+
+    setTimeout(() =>{
+        cursor.classList.remove("expand");
+    }, 500)
+})
+</script>
+</body>
+</html>

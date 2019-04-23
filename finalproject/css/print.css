@@ -1,0 +1,27 @@
+body
+{
+    color: black;
+    background: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12pt;
+}
+p
+{
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12pt;
+}
+a
+{
+    text-decoration: underline;
+    color: black;
+}
+section
+{
+    display: block;
+}
+button, iframe, img, .numbertext, .prev, .next, script, .icon-bar
+{
+    display: none;
+}
+
